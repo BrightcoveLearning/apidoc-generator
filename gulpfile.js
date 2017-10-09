@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     apidoc = require('gulp-api-doc'),
     DOMParser = require('xmldom').DOMParser,
     styleClasses = {
@@ -17,14 +17,26 @@ var gulp = require('gulp'),
         delete: '#9B2556'
     };
 
-gulp.task('apidoc',function(cb){
-          apidoc.exec({
-              src: "example/",
-              dest: "build/",
-              debug: true,
-              includeFilters: [ ".*\\.js$" ]
-          }, cb);
-});
+gulp.task('doc', () => {
+    var option, i = process.argv.indexOf('--ap'i);
+    if(i > -1) {
+        api = process.argv[i + 1];
+    }
+    i = process.argv.indexOf('--node')
+    if(i > -1) {
+        node = process.argv[i + 1];
+    }
+    i = process.argv.indexOf('--version')
+    if(i > -1) {
+        version = process.argv[i + 1];
+    }
+    gulp mytask --newoption somestuff --option 123
+    gulp mytask --option 123 --newoption somestuff
+    gulp mytask --flag --option 123
+    return gulp.src(api + ' / ' + version + '/src' + '/*.js')
+            .pipe(apidoc({markdown: true, }))
+            .pipe(gulp.dest(node));
+    });
 
 
     gulp.task('fileinclude', function() {
