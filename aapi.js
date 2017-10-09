@@ -18,6 +18,16 @@ var gulp = require('gulp'),
         delete: '#9B2556'
     };
 
+gulp.task('apidoc',function(cb){
+          apidoc.exec({
+              src: "example/",
+              dest: "build/",
+              debug: true,
+              includeFilters: [ ".*\\.js$" ]
+          }, cb);
+});
+
+
     gulp.task('fileinclude', function() {
       gulp.src(['index.html']);
         .pipe(fileinclude({
