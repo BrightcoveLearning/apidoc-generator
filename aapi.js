@@ -13,7 +13,7 @@ var fileinclude = require('gulp-file-include'),
         get: '#129129',
         post: '#4A5BBD',
         put: '#E4B842',
-        patch: '#364885',
+        patch: '#CF773F',
         delete: '#9B2556'
     };
 
