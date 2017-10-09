@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     apidoc = require('gulp-apidocjs'),
-    fileinclude = require('gulp-file-include'),
     DOMParser = require('xmldom').DOMParser,
     styleClasses = {
         table: 'bcls-table',
