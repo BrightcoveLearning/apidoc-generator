@@ -144,7 +144,7 @@ module.exports = function (grunt) {
          * @param  {Object}   regex    the regex
          * @param  {String}   newStr   the string to substitute for the regex finds
          * @param  {Function} callback callback function
-         * @return {String}   str      the string with replacements made*
+         * @return {String}   str      the string with replacements made
          */
         function regexReplace(str, regex, newStr, callback) {
             str = str.replace(regex, newStr);
